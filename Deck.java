@@ -39,7 +39,6 @@ public class Deck {
     
     //TODO: make this randomization way better.
     public void randomize(){
-        Random randomizer = new Random();
         int size = deck.capacity();
         Card[] table;
         table = new Card[size];
@@ -50,7 +49,7 @@ public class Deck {
         //Randomizing: looping through each index, swapping
         //with random other index
         for(int j = 0; j < table.length; j++){
-            int swapIndex = randomizer.nextInt(table.length-1);
+            int swapIndex = generator.nextInt(table.length-1);
             Card cabinet = table[j];
             table[j] = table[swapIndex];
             table[swapIndex] = cabinet;
