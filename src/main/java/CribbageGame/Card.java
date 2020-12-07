@@ -1,3 +1,4 @@
+package CribbageGame;
 public class Card {
     private String suit;
     private String color;
@@ -5,13 +6,17 @@ public class Card {
     private int value;
 
     public Card(int rank, String suit){
+        this.suit = suit;
         this.rank = rank;
+        
         if(this.suit == "Club" || this.suit == "Spade"){
             color = "Black";
         }else if(this.suit == "Heart" || this.suit == "Diamond"){
             color = "Red";
         }else if(this.suit == "Joker"){
             color = "Joker";
+        }else{
+            System.out.println("That's not a valid suit!");
         }
         if(rank > 10){
             value = 10;
